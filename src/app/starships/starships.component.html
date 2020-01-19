@@ -1,0 +1,19 @@
+<form nz-form [formGroup]="form">
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="distance">
+      Do you want to know for all Star Wars starships, how many stops for resupply are required?
+      Just inform the value in Megalights (MGLT) below.
+    </nz-form-label>
+    <nz-form-control>
+      <nz-input-group nzPrefixIcon="rocket">
+        <input formControlName="distance" nz-input placeholder="Distance in Megalights (MGLT)"/>
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-control>
+      <button nz-button nzType="primary">Filter</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
