@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  title = 'kneat-frontend';
+
+  tabs = [
+    {
+      name: 'Starships',
+      path: 'starships'
+    }
+  ];
 }

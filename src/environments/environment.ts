@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   starWars: {
-    api: 'https://swapi.co/api/'
+    api: 'https://swapi.co/api'
   }
 };
 

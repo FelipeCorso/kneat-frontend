@@ -1,0 +1,14 @@
+.banner {
+  background: transparent url("/assets/img/star-wars-banner.jpg") no-repeat right top;
+  background-size: 100% 80px;
+  height: 100%;
+
+  .logo {
+    display: none;
+    width: 150px;
+  }
+}
+
+.nz-tabset .ant-tabs-content {
+  padding: 0 20px;
+}

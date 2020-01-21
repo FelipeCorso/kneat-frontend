@@ -1,3 +1,10 @@
+export interface StarshipResponse {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: Array<Starship>;
+}
+
 export interface Starship {
   stopsRequired: number;
   MGLT: string;
