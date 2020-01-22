@@ -73,7 +73,9 @@ export class StarshipsComponent implements OnInit, OnDestroy {
 
   private getStopsRequired(starship: Starship): number {
     // Only calculate the stops required if there is a value informed to the starship.
-    if (starship.consumables) {
+    if (starship.consumables && starship.consumables !== 'unknown'
+      && starship.MGLT && starship.MGLT !== 'unknown'
+    ) {
       const consumables = starship.consumables.split(' ');
       const amountOfTime: number = parseInt(consumables[0], 10);
       const period: Period = Period[consumables[1].toUpperCase()];
@@ -88,7 +90,7 @@ export class StarshipsComponent implements OnInit, OnDestroy {
       return Math.trunc(stopsRequired);
     }
 
-    return 0;
+    return null;
   }
 
   private getAmountOfHoursInPeriod(period: Period): number {

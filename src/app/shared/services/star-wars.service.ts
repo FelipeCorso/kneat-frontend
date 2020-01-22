@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {Starship} from '../../starships/starship-dto';
+import {Starship, StarshipResponse} from '../../starships/starship-dto';
 import {environment} from '../../../environments/environment';
 
 @Injectable({
@@ -14,11 +14,11 @@ export class StarWarsService {
   ) {
   }
 
-  getStarShips(): Observable<Array<Starship>> {
-    return this.http.get<Array<Starship>>(`${environment.starWars.api}/starships`);
+  getStarships(page?: number): Observable<StarshipResponse> {
+    return this.http.get<StarshipResponse>(`${environment.starWars.api}/starships${page ? '/?page=' + page : ''}`);
   }
 
-  getStarShipById(id: number): Observable<Starship> {
+  getStarshipById(id: number): Observable<Starship> {
     return this.http.get<Starship>(`${environment.starWars.api}/starships/${id}`);
   }
 }

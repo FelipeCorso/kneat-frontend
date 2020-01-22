@@ -50,7 +50,14 @@
     <tbody>
     <tr *ngFor="let data of starships.data">
       <td>{{ data.name }}</td>
-      <td>{{ data.stopsRequired }}</td>
+      <td>
+        <ng-container *ngIf="data.stopsRequired === null; else infoTemplate">
+          Unknown
+        </ng-container>
+        <ng-template #infoTemplate>
+          {{ data.stopsRequired }}
+        </ng-template>
+      </td>
       <td>
         <a href="#">See more</a>
       </td>

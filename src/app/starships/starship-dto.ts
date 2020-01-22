@@ -6,7 +6,7 @@ export interface StarshipResponse {
 }
 
 export interface Starship {
-  stopsRequired: number;
+  stopsRequired: number | null;
   MGLT: string;
   cargo_capacity: string;
   consumables: string;
